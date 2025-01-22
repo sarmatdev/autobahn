@@ -11,10 +11,11 @@ pub async fn main() {
     router_feed_lib::utils::tracing_subscriber_init();
 
     let grpc_addr = env::var("GRPC_ADDR").expect("need grpc url");
+    let grpc_token = env::var("GRPC_TOKEN").expect("need grpc token");
     let grpc_config = GrpcSourceConfig {
         name: "mysource1".to_string(),
         connection_string: grpc_addr.clone(),
-        token: None,
+        token: Some(grpc_token),
         retry_connection_sleep_secs: 3,
         tls: None,
     };
