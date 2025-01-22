@@ -28,7 +28,6 @@ pub async fn get_all_dex(
         dex_saber::SaberDex::initialize(&mut rpc_client, HashMap::new()).await?,
         dex_raydium_cp::RaydiumCpDex::initialize(&mut rpc_client, HashMap::new()).await?,
         dex_raydium::RaydiumDex::initialize(&mut rpc_client, HashMap::new()).await?,
-        dex_openbook_v2::OpenbookV2Dex::initialize(&mut rpc_client, HashMap::new()).await?,
         dex_infinity::InfinityDex::initialize(&mut rpc_client, HashMap::new()).await?,
         dex_invariant::InvariantDex::initialize(&mut rpc_client, HashMap::new()).await?,
     ];

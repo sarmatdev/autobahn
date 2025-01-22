@@ -286,14 +286,6 @@ async fn main() -> anyhow::Result<()> {
             &config.raydium.mints
         ),
         dex::generic::build_dex!(
-            dex_openbook_v2::OpenbookV2Dex::initialize(&mut router_rpc, HashMap::new(),).await?,
-            &mango_data,
-            config.openbook_v2.enabled,
-            config.openbook_v2.add_mango_tokens,
-            config.openbook_v2.take_all_mints,
-            &config.openbook_v2.mints
-        ),
-        dex::generic::build_dex!(
             dex_infinity::InfinityDex::initialize(&mut router_rpc, HashMap::new(),).await?,
             &mango_data,
             config.infinity.enabled,
